@@ -1,0 +1,36 @@
+1) Write a C program to compute average waiting time and average turn around
+time for First-Come First-Served (FCFS) Scheduling algorithm, the program
+should accept the arrival time and burst time as input.
+#include<stdio.h>
+main()
+{
+float tot=0,avg,avgtr,totr=0;
+int n,i,bt[100],wt[100],tr[100];
+system("cls");
+printf("Enter the number of process\n");
+scanf("%d",&n);
+printf("Enter the burst time :\n");
+for(i=0;i<n;i++)
+{
+scanf("%d",&bt[i]);
+}
+wt[0]=0;
+printf("Waiting time of each process\n");
+printf("Waiting time of p[%d]=%d\n",0,wt[0]);
+for(i=1;i<n;i++)
+{
+wt[i]=wt[i-1]+bt[i-1];
+printf("Waiting time of p[%d]=%d\n",i,wt[i]);
+}
+for(i=0;i<n;i++)
+{
+tot=tot+wt[i];
+tr[i]=wt[i]+bt[i];
+printf("\n turn around time for p[%d]=%d\n",i,tr[i]);
+totr=totr+tr[i];
+}
+avg=tot/n;
+avgtr=totr/n;
+printf("\n Average waiting time=%f",avg);
+printf("\n Average around time%f",avgtr);
+}

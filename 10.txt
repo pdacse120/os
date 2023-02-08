@@ -1,0 +1,24 @@
+#include<stdio.h>
+void main()
+{
+int queue[100],t[100],head,i,n;
+float seek,avg;
+system("cls");
+printf("FCFS disk scheduling algorithm\n");
+printf("Enter the size of request queue\n");
+scanf("%d",&n);
+printf("Enter the elements in the queue\n");
+for(i=0;i<n;i++)
+scanf("%d",&queue[i]);
+printf("Enter the current head position\n");
+scanf("%d",&head);
+for(i=0;i<n;i++)
+{
+t[i]=abs(head-queue[i]);
+head=queue[i];
+seek=seek+t[i];
+}
+avg=seek/n;
+printf("The total seek time=%f\n",seek);
+printf("Average seek time=%f",avg);
+}
