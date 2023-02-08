@@ -1,6 +1,4 @@
-1) Write a C program to compute average waiting time and average turn around
-time for First-Come First-Served (FCFS) Scheduling algorithm, the program
-should accept the arrival time and burst time as input.
+
 #include<stdio.h>
 main()
 {
